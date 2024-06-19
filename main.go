@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"proj-cluster/heart"
+	utils "proj-cluster/utils"
 	"time"
 
 	firebase "firebase.google.com/go"
@@ -35,8 +36,12 @@ func main() {
 	}
 
 	fmt.Printf("Running as %s", runtimeId)
+	
+	var startTimeValue = time.Now()
+
 	for {
 		heart.Heartbeat(runtimeId, ctx, databaseClient)
+		utils.LogEvent(runtimeId, "Logged", startTimeValue)
 		time.Sleep(10 * time.Second)
 	}
 }
