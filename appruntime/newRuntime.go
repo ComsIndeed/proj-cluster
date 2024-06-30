@@ -18,6 +18,6 @@ func RunNewRuntime(firebaseApp *firebase.App, ctx context.Context, firebaseDatab
 	for {
 		heart.Heartbeat(runtimeId, ctx, firebaseDatabaseClient)
 		utils.LogEvent(runtimeId, startTimeValue)
-		time.Sleep(1 * time.Second)
+		time.Sleep(10 * time.Second)
 	}
 }
