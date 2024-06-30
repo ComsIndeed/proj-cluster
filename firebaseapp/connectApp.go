@@ -10,11 +10,10 @@ import (
 	"google.golang.org/api/option"
 )
 
-func ConnectToFirebase(databaseURL string) (*firebase.App, *db.Client) {
+func ConnectToFirebase(ctx context.Context, databaseURL string) (*firebase.App, *db.Client) {
 
 	// Options
 	config := &firebase.Config{DatabaseURL: databaseURL}
-	ctx := context.Background()
 	option := option.WithCredentialsFile(os.Getenv("GOOGLE_APPLICATION_CREDENTIALS"))
 
 	// New App
