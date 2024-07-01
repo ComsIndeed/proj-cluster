@@ -34,7 +34,7 @@ func Heartbeat(runtimeId string, ctx context.Context, databaseClient *db.Client)
 		// 	"connectionType": connectionInfo.ConnectionType,
 		// },
 		"time":     time.Now().Unix(),
-		"services": []string{"PLACEHOLDER 1", "PLACEHOLDER 2"},
+		"services": []string{""},
 	}
 
 	go func() {
